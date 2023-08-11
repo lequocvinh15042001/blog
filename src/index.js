@@ -6,6 +6,9 @@ const handlebars = require('express-handlebars').engine
 const app = express() //instance của dependence
 const port = 3000; // cổng
 
+//cấu hình file tĩnh img
+app.use(express.static(path.join(__dirname, 'resources/public')))
+
 //HTTP logger
 app.use(morgan('combined'))
 
