@@ -9,6 +9,12 @@ const port = 3000; // cổng
 //cấu hình file tĩnh img
 app.use(express.static(path.join(__dirname, 'resources/public')))
 
+//dùng middleware
+app.use(express.urlencoded({
+  extended: true
+}))
+app.use(express.json())
+
 //HTTP logger
 app.use(morgan('combined'))
 
@@ -26,8 +32,20 @@ app.get('/', (req, res) => { //phương thức GET
 })
 
 app.get('/news', (req, res) => { //phương thức GET
+  console.log(req.query.q)
   res.render('news');
 })
+
+app.post('/search', (req, res) => { //phương thức POST
+  console.log(req.body)
+  res.send('');
+})
+
+app.get('/search', (req, res) => { //phương thức GET
+  console.log(req.query.q)
+  res.render('search');
+})
+
 
 //template engines (handlebars): Dùng để tách file,
 // viết file code gọn gàng, không viết dưới dạng string --> Express Handlebars
