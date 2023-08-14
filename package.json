@@ -25,13 +25,13 @@
     "url": "https://github.com/lequocvinh15042001/blog/issues"
   },
   "homepage": "https://github.com/lequocvinh15042001/blog#readme",
-  "lint-staged": {
-    "src/**/*.{js, json, scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js, json, scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "dependencies": {
     "express": "^4.18.2",
